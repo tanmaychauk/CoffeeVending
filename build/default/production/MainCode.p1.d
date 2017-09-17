@@ -1,4 +1,5 @@
 build/default/production/MainCode.p1:	\
+	timer2.h	\
 	CommonDeclarations.h	\
 	SettingModeHandler.h	\
 	myTypeDef.h	\

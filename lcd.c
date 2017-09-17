@@ -1,5 +1,5 @@
 #include"lcd.h"
-//#define HIGHER_BYTES
+#define HIGHER_BYTES
 #define LOWER_BYTES
 #define delaytime 5
 

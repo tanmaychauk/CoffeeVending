@@ -5,3 +5,5 @@ build/default/production/CommonDeclarations.p1:	\
 	lcd.h	\
 	PORTB_Config.h	\
 	EEPROM_ReadWrite.h	\
+	ADC.h	\
+	timer0.h	\

@@ -1,3 +1,5 @@
+#include <eeprom_routines.h>
+
 #include"SettingModeHandler.h"
 
 #define    MAX_QTY_TEA              15
@@ -152,3 +154,14 @@ void UpdateScreen(Boolean Mode)
     __delay_ms(3000);
 }
 
+void updateConfiguration()
+{
+        EEPROM_WRITE(currentCoffeeQuantity_ADDR, CurrentCoffeeQuantity);
+        __delay_ms(100);
+        EEPROM_WRITE(currentWaterQuantityForCoffee_ADDR, CurrentWaterQuantity_forCoffee);
+        __delay_ms(100);
+        EEPROM_WRITE(currentTeaQuantity_ADDR, CurrentTeaQuantity);
+        __delay_ms(100);
+        EEPROM_WRITE(currentWaterQuantityForTea_ADDR, CurrentWaterQuantity_forTea);
+        __delay_ms(100);
+}

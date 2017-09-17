@@ -34,7 +34,7 @@ void NextButtonHandler();
 void UpbuttonHandler();
 void DownButtonHandler();
 void UpdateScreen(Boolean Mode);
-
+void updateConfiguration();
 
 
 

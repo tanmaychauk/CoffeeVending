@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=ADC.c CommonDeclarations.c EEPROM_ReadWrite.c EventHandler.c MainCode.c PORTB_Config.c SettingModeHandler.c lcd.c serveMethods.c timer0.c
+SOURCEFILES_QUOTED_IF_SPACED=ADC.c CommonDeclarations.c EEPROM_ReadWrite.c EventHandler.c MainCode.c PORTB_Config.c SettingModeHandler.c lcd.c serveMethods.c timer0.c timer2.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/ADC.p1 ${OBJECTDIR}/CommonDeclarations.p1 ${OBJECTDIR}/EEPROM_ReadWrite.p1 ${OBJECTDIR}/EventHandler.p1 ${OBJECTDIR}/MainCode.p1 ${OBJECTDIR}/PORTB_Config.p1 ${OBJECTDIR}/SettingModeHandler.p1 ${OBJECTDIR}/lcd.p1 ${OBJECTDIR}/serveMethods.p1 ${OBJECTDIR}/timer0.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/ADC.p1.d ${OBJECTDIR}/CommonDeclarations.p1.d ${OBJECTDIR}/EEPROM_ReadWrite.p1.d ${OBJECTDIR}/EventHandler.p1.d ${OBJECTDIR}/MainCode.p1.d ${OBJECTDIR}/PORTB_Config.p1.d ${OBJECTDIR}/SettingModeHandler.p1.d ${OBJECTDIR}/lcd.p1.d ${OBJECTDIR}/serveMethods.p1.d ${OBJECTDIR}/timer0.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/ADC.p1 ${OBJECTDIR}/CommonDeclarations.p1 ${OBJECTDIR}/EEPROM_ReadWrite.p1 ${OBJECTDIR}/EventHandler.p1 ${OBJECTDIR}/MainCode.p1 ${OBJECTDIR}/PORTB_Config.p1 ${OBJECTDIR}/SettingModeHandler.p1 ${OBJECTDIR}/lcd.p1 ${OBJECTDIR}/serveMethods.p1 ${OBJECTDIR}/timer0.p1 ${OBJECTDIR}/timer2.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/ADC.p1.d ${OBJECTDIR}/CommonDeclarations.p1.d ${OBJECTDIR}/EEPROM_ReadWrite.p1.d ${OBJECTDIR}/EventHandler.p1.d ${OBJECTDIR}/MainCode.p1.d ${OBJECTDIR}/PORTB_Config.p1.d ${OBJECTDIR}/SettingModeHandler.p1.d ${OBJECTDIR}/lcd.p1.d ${OBJECTDIR}/serveMethods.p1.d ${OBJECTDIR}/timer0.p1.d ${OBJECTDIR}/timer2.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/ADC.p1 ${OBJECTDIR}/CommonDeclarations.p1 ${OBJECTDIR}/EEPROM_ReadWrite.p1 ${OBJECTDIR}/EventHandler.p1 ${OBJECTDIR}/MainCode.p1 ${OBJECTDIR}/PORTB_Config.p1 ${OBJECTDIR}/SettingModeHandler.p1 ${OBJECTDIR}/lcd.p1 ${OBJECTDIR}/serveMethods.p1 ${OBJECTDIR}/timer0.p1
+OBJECTFILES=${OBJECTDIR}/ADC.p1 ${OBJECTDIR}/CommonDeclarations.p1 ${OBJECTDIR}/EEPROM_ReadWrite.p1 ${OBJECTDIR}/EventHandler.p1 ${OBJECTDIR}/MainCode.p1 ${OBJECTDIR}/PORTB_Config.p1 ${OBJECTDIR}/SettingModeHandler.p1 ${OBJECTDIR}/lcd.p1 ${OBJECTDIR}/serveMethods.p1 ${OBJECTDIR}/timer0.p1 ${OBJECTDIR}/timer2.p1
 
 # Source Files
-SOURCEFILES=ADC.c CommonDeclarations.c EEPROM_ReadWrite.c EventHandler.c MainCode.c PORTB_Config.c SettingModeHandler.c lcd.c serveMethods.c timer0.c
+SOURCEFILES=ADC.c CommonDeclarations.c EEPROM_ReadWrite.c EventHandler.c MainCode.c PORTB_Config.c SettingModeHandler.c lcd.c serveMethods.c timer0.c timer2.c
 
 
 CFLAGS=
@@ -83,7 +83,7 @@ ifneq ($(INFORMATION_MESSAGE), )
 endif
 	${MAKE}  -f nbproject/Makefile-default.mk dist/${CND_CONF}/${IMAGE_TYPE}/CoffeeVending.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 
-MP_PROCESSOR_OPTION=16F877A
+MP_PROCESSOR_OPTION=16F887
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
@@ -173,6 +173,14 @@ ${OBJECTDIR}/timer0.p1: timer0.c  nbproject/Makefile-${CND_CONF}.mk
 	@cat ${OBJECTDIR}/timer0.dep >> ${OBJECTDIR}/timer0.p1.d
 	@${FIXDEPS} "${OBJECTDIR}/timer0.p1.d" $(SILENT) -ht  -rsi ${MP_CC_DIR}../ 
 	
+${OBJECTDIR}/timer2.p1: timer2.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	${MP_CC} --pass1 timer2.c $(MP_EXTRA_CC_PRE) -q --chip=$(MP_PROCESSOR_OPTION) -P  --outdir="${OBJECTDIR}" -N31 --warn=0 --runtime=default,+clear,+init,-keep,+osccal,-resetbits,-download,-stackcall,+clib --summary=default,-psect,-class,+mem,-hex --opt=default,+asm,-asmfile,-speed,+space,-debug,9 -D__DEBUG --debugger=pickit2  --double=24 --float=24 --addrqual=ignore --mode=lite -g --asmlist "--errformat=%f:%l: error: %s" "--msgformat=%f:%l: advisory: %s" "--warnformat=%f:%l warning: %s"
+	@${MP_CC} --scandep  timer2.c $(MP_EXTRA_CC_PRE) -q --chip=$(MP_PROCESSOR_OPTION) -P  --outdir="${OBJECTDIR}" -N31 --warn=0 --runtime=default,+clear,+init,-keep,+osccal,-resetbits,-download,-stackcall,+clib --opt=default,+asm,-asmfile,-speed,+space,-debug,9 -D__DEBUG --debugger=pickit2  --double=24 --float=24 --addrqual=ignore --mode=lite -g --asmlist "--errformat=%f:%l: error: %s" "--msgformat=%f:%l: advisory: %s" "--warnformat=%f:%l warning: %s"
+	@echo ${OBJECTDIR}/timer2.p1: > ${OBJECTDIR}/timer2.p1.d
+	@cat ${OBJECTDIR}/timer2.dep >> ${OBJECTDIR}/timer2.p1.d
+	@${FIXDEPS} "${OBJECTDIR}/timer2.p1.d" $(SILENT) -ht  -rsi ${MP_CC_DIR}../ 
+	
 else
 ${OBJECTDIR}/ADC.p1: ADC.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -253,6 +261,14 @@ ${OBJECTDIR}/timer0.p1: timer0.c  nbproject/Makefile-${CND_CONF}.mk
 	@echo ${OBJECTDIR}/timer0.p1: > ${OBJECTDIR}/timer0.p1.d
 	@cat ${OBJECTDIR}/timer0.dep >> ${OBJECTDIR}/timer0.p1.d
 	@${FIXDEPS} "${OBJECTDIR}/timer0.p1.d" $(SILENT) -ht  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/timer2.p1: timer2.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	${MP_CC} --pass1 timer2.c $(MP_EXTRA_CC_PRE) -q --chip=$(MP_PROCESSOR_OPTION) -P  --outdir="${OBJECTDIR}" -N31 --warn=0 --runtime=default,+clear,+init,-keep,+osccal,-resetbits,-download,-stackcall,+clib --summary=default,-psect,-class,+mem,-hex --opt=default,+asm,-asmfile,-speed,+space,-debug,9  --double=24 --float=24 --addrqual=ignore --mode=lite -g --asmlist "--errformat=%f:%l: error: %s" "--msgformat=%f:%l: advisory: %s" "--warnformat=%f:%l warning: %s"
+	@${MP_CC} --scandep  timer2.c $(MP_EXTRA_CC_PRE) -q --chip=$(MP_PROCESSOR_OPTION) -P  --outdir="${OBJECTDIR}" -N31 --warn=0 --runtime=default,+clear,+init,-keep,+osccal,-resetbits,-download,-stackcall,+clib --opt=default,+asm,-asmfile,-speed,+space,-debug,9  --double=24 --float=24 --addrqual=ignore --mode=lite -g --asmlist "--errformat=%f:%l: error: %s" "--msgformat=%f:%l: advisory: %s" "--warnformat=%f:%l warning: %s"
+	@echo ${OBJECTDIR}/timer2.p1: > ${OBJECTDIR}/timer2.p1.d
+	@cat ${OBJECTDIR}/timer2.dep >> ${OBJECTDIR}/timer2.p1.d
+	@${FIXDEPS} "${OBJECTDIR}/timer2.p1.d" $(SILENT) -ht  -rsi ${MP_CC_DIR}../ 
 	
 endif
 

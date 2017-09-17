@@ -14,8 +14,9 @@
 #include "myTypeDef.h"
 
 void adc_initialise();
-UWord adc_getValue();
-
+int adc_getValue();
+void print_ADCValue(int adcValue);
+void readADCvalue();
 
 
 

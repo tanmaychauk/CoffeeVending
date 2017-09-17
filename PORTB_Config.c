@@ -2,7 +2,7 @@
 
 void initialisePortB()
 {
-    TRISB = 0b00000001;     //RB0,RB4,RB5,RB6,RB7 as input pins
+    TRISB = 0b11110001;     //RB0,RB4,RB5,RB6,RB7 as input pins
     RBPU = 1;               //enable internal pullup
     
 }

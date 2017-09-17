@@ -1,4 +1,5 @@
 C:\Program Files (x86)\HI-TECH Software\PICC\9.71a\include\htc.h
+timer2.h
 CommonDeclarations.h
 SettingModeHandler.h
 C:\Program Files (x86)\HI-TECH Software\PICC\9.71a\include\pic.h
@@ -7,7 +8,7 @@ lcd.h
 PORTB_Config.h
 C:\Program Files (x86)\HI-TECH Software\PICC\9.71a\include\eeprom_routines.h
 EEPROM_ReadWrite.h
-C:\Program Files (x86)\HI-TECH Software\PICC\9.71a\include\pic168xa.h
 C:\Program Files (x86)\HI-TECH Software\PICC\9.71a\include\string.h
 ADC.h
+C:\Program Files (x86)\HI-TECH Software\PICC\9.71a\include\pic16f887.h
 timer0.h

@@ -1,5 +1,5 @@
 
-# 1 "ADC.c"
+# 1 "timer2.c"
 
 # 19 "C:\Program Files (x86)\HI-TECH Software\PICC\9.71a\include\pic16f887.h"
 volatile unsigned char INDF @ 0x000;
@@ -559,12 +559,6 @@ typedef unsigned long UDWord;
 typedef float FWord;
 typedef double FDWord;
 
-# 16 "ADC.h"
-void adc_initialise();
-int adc_getValue();
-void print_ADCValue(int adcValue);
-void readADCvalue();
-
 # 4 "C:\Program Files (x86)\HI-TECH Software\PICC\9.71a\include\string.h"
 typedef int ptrdiff_t;
 typedef unsigned size_t;
@@ -574,50 +568,6 @@ typedef unsigned short wchar_t;
 extern int errno;
 
 # 22
-extern void * memcpy(void *, const void *, size_t);
-extern void * memmove(void *, const void *, size_t);
-extern void * memset(void *, int, size_t);
-
-# 35
-extern char * strcat(char *, const char *);
-extern char * strcpy(char *, const char *);
-extern char * strncat(char *, const char *, size_t);
-extern char * strncpy(char *, const char *, size_t);
-extern char * strdup(const char *);
-extern char * strtok(char *, const char *);
-
-
-extern int memcmp(const void *, const void *, size_t);
-extern int strcmp(const char *, const char *);
-extern int stricmp(const char *, const char *);
-extern int strncmp(const char *, const char *, size_t);
-extern int strnicmp(const char *, const char *, size_t);
-extern void * memchr(const void *, int, size_t);
-extern size_t strcspn(const char *, const char *);
-extern char * strpbrk(const char *, const char *);
-extern size_t strspn(const char *, const char *);
-extern char * strstr(const char *, const char *);
-extern char * stristr(const char *, const char *);
-extern char * strerror(int);
-extern size_t strlen(const char *);
-extern char * strchr(const char *, int);
-extern char * strichr(const char *, int);
-extern char * strrchr(const char *, int);
-extern char * strrichr(const char *, int);
-
-# 24 "lcd.h"
-void lcd_init();
-void lcd_write(UByte data);
-void lcd_cmd(UByte cmnd);
-void lcd_clear();
-void clear_XY(UByte row,UByte column);
-void lcd_puts(UByte *ptr);
-void goto_XY(UByte row,UByte column);
-void lcd_writeThisStringAt(UByte row,UByte column,UByte *ptr);
-void lcd_writeThisCharAt(UByte row,UByte column,UByte data);
-void lcd_writeThisDigit(UByte data);
-
-# 22 "C:\Program Files (x86)\HI-TECH Software\PICC\9.71a\include\string.h"
 extern void * memcpy(void *, const void *, size_t);
 extern void * memmove(void *, const void *, size_t);
 extern void * memset(void *, int, size_t);
@@ -711,60 +661,25 @@ void NormalModeOperations(UByte keyPressed);
 void SettingModeOperations(UByte KeyPressed);
 void IsKeyPressed();
 
-# 7 "ADC.c"
-void adc_initialise() {
-ADCON0 = 0x00;
-ADCON1 = 0x80;
+# 25 "timer2.h"
+void initialise_timer2();
+void start_timer2();
+void stop_timer2();
 
-}
-
-int adc_getValue()
+# 5 "timer2.c"
+void initialise_timer2()
 {
 
-ADON = 1;
-
-int adcValue = 0;
-int temp = 0;
-
-GODONE = 1;
-while (GODONE);
-
-adcValue = (ADRESH << 8) + ADRESL;
-
-
-
-ADON = 0;
-
-return adcValue;
+T2CON = 0b1111011;
+TMR2IE = 1;
+TMR2 = 0x00;
+PR2 = 0xFF;
 }
-
-void print_ADCValue(int adcValue) {
-
-UByte data[5] = {'0', '0', '0', '0', '\0'};
-
-
-data[3] = (adcValue % 10) + 0x30;
-adcValue = adcValue / 10;
-
-data[2] = (adcValue % 10) + 0x30;
-adcValue = adcValue / 10;
-
-data[1] = (adcValue % 10) + 0x30;
-adcValue = adcValue / 10;
-
-data[0] = (adcValue % 10) + 0x30;
-adcValue = adcValue / 10;
-
-lcd_writeThisStringAt(1,0,data);
-
-}
-
-
-void readADCvalue()
+void start_timer2()
 {
-int temp;
-temp = adc_getValue();
-print_ADCValue(temp);
-_delay((unsigned long)((200)*(20000000/4000.0)));
-
+TMR2ON = 1;
+}
+void stop_timer2()
+{
+TMR2ON = 0;
 }

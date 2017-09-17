@@ -46,17 +46,21 @@
 Boolean IsNewMachine = TRUE;
 Boolean flag_T0_OneSecond;
 Boolean flag_T0_TenSecond;
+Boolean flag_TenSecond_main;
+Boolean flagTimer2;
 Boolean modeOfWorking = 1;
 
 
-UByte CurrentCoffeeQuantity = 10;
-UByte CurrentWaterQuantity_forCoffee = 10;
-UByte CurrentTeaQuantity = 10;
-UByte CurrentWaterQuantity_forTea = 10;
+UByte CurrentCoffeeQuantity; 
+UByte CurrentWaterQuantity_forCoffee;
+UByte CurrentTeaQuantity; 
+UByte CurrentWaterQuantity_forTea;
 
-
-
-
+UByte timer0_count = 0;
+UByte timer0_count10 = 0;
+UByte button_pressed = 0;
+Boolean isFirstTime_Settings = 0;
+int buttonPressedCount = 0;
 
 
 void GlobalInterrupt_ENABLE();

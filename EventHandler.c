@@ -7,28 +7,30 @@
 Boolean isKeyPressed = 0;
 UByte keyPressed = 0;
 
-void IsKeyPressed() 
+void testmode(keyPressed)
 {
+    lcd_writeThisCharAt(1,0,(keyPressed + 0x30));
+}
+
+void IsKeyPressed() {
     keyPressed = 0;
-    PORTA = 0x00;
-    
+    PORTB = 0x00;
     isKeyPressed = 0;
 
-    while (isKeyPressed == FALSE && keyPressed == 0)
-    {
-   /*     
+    while (isKeyPressed == FALSE && keyPressed == 0) {
+
         if (!(1 && RB4)) {
             __delay_ms(debouncdDelay);
             if (!(1 && RB4)) {
                 isKeyPressed = TRUE;
-                keyPressed = 1;
+                keyPressed = 4;
             }
         }
         if (!(1 && RB5)) {
             __delay_ms(debouncdDelay);
             if (!(1 && RB5)) {
                 isKeyPressed = TRUE;
-                keyPressed = 2;
+                keyPressed = 3;
             }
 
         }
@@ -36,7 +38,7 @@ void IsKeyPressed()
             __delay_ms(debouncdDelay);
             if (!(1 && RB6)) {
                 isKeyPressed = TRUE;
-                keyPressed = 3;
+                keyPressed = 2;
             }
 
         }
@@ -44,87 +46,73 @@ void IsKeyPressed()
             __delay_ms(debouncdDelay);
             if (!(1 && RB7)) {
                 isKeyPressed = TRUE;
-                keyPressed = 4;
-            }
-        }
-  
-    
-
-  */
-        if (0b00000010 == PORTA) {
-            __delay_ms(debouncdDelay);
-            if (0b00000010 == PORTA) {
-                isKeyPressed = TRUE;
                 keyPressed = 1;
             }
         }
-        if (0b00000100 == PORTA) {
-            __delay_ms(debouncdDelay);
-            if (0b00000100 == PORTA) {
-                isKeyPressed = TRUE;
-                keyPressed = 2;
-            }
 
-        }
-        if (0b00001000 == PORTA) {
-            __delay_ms(debouncdDelay);
-            if (0b00001000 == PORTA) {
-                isKeyPressed = TRUE;
-                keyPressed = 3;
-            }
+    }
 
-        }
-        if (0b00010000 == PORTA) {
-            __delay_ms(debouncdDelay);
-            if (0b00010000 == PORTA) {
-                isKeyPressed = TRUE;
-                keyPressed = 4;
-            }
-        }
+    /*
+          if (0b00000010 == PORTA) {
+              __delay_ms(debouncdDelay);
+              if (0b00000010 == PORTA) {
+                  isKeyPressed = TRUE;
+                  keyPressed = 1;
+              }
+          }
+          if (0b00000100 == PORTA) {
+              __delay_ms(debouncdDelay);
+              if (0b00000100 == PORTA) {
+                  isKeyPressed = TRUE;
+                  keyPressed = 2;
+              }
+
+          }
+          if (0b00001000 == PORTA) {
+              __delay_ms(debouncdDelay);
+              if (0b00001000 == PORTA) {
+                  isKeyPressed = TRUE;
+                  keyPressed = 3;
+              }
+
+          }
+          if (0b00010000 == PORTA) {
+              __delay_ms(debouncdDelay);
+              if (0b00010000 == PORTA) {
+                  isKeyPressed = TRUE;
+                  keyPressed = 4;
+              }
+          }
   
-    }
-    
-    if (isKeyPressed == TRUE)
-    {
+      }
+     */
+    if (isKeyPressed == TRUE) {
         if (0 == modeOfWorking) {
-            handleEvent(keyPressed);
+            SettingModeOperations(keyPressed);
         } else if (1 == modeOfWorking) {
-            handleEvent(keyPressed);
+            NormalModeOperations(keyPressed);
         }
     }
-
     isKeyPressed = FALSE;
     keyPressed = 0;
 }
-
-void handleEvent(UByte keyPressed) {
-
-    lcd_clear();
-    if (0 == modeOfWorking) {
-      //  lcd_writeThisStringAt(0, 0, "SETTING MODE");
-        SettingModeOperations(keyPressed);
-    } else if (1 == modeOfWorking) {
-      //  lcd_writeThisStringAt(0, 0, "NORMAL MODE");
-        NormalModeOperations(keyPressed);
-    }
-
-}
-
 void SettingModeOperations(UByte keyPressed) {
     switch (keyPressed) {
         case PREVIOUS: //Previous
             //   lcd_writeThisCharAt(1, 0, keyPressed + 0x30);
-            PreviousButtonHandler();
+            
+            DownButtonHandler();
             break;
 
         case UP: //Up
             //  lcd_writeThisCharAt(1, 0, keyPressed + 0x30);
-            UpbuttonHandler();
+            PreviousButtonHandler();
+            
             break;
 
         case DOWN: //Down
             //  lcd_writeThisCharAt(1, 0, keyPressed + 0x30);
-            DownButtonHandler();
+            UpbuttonHandler();
             break;
 
         case NEXT: //Next
@@ -152,17 +140,17 @@ void NormalModeOperations(UByte keyPressed) {
 
         case WATER:
             //  lcd_writeThisCharAt(1, 0, keyPressed + 0x30);
-            serveHotWater(); //for hot water
+            serveTea(); //for Tea
             break;
 
         case TEA:
             //  lcd_writeThisCharAt(1, 0, keyPressed + 0x30);
-            serveTea(); //for Tea
+            serveHotWater(); //for hot water
+            
             break;
 
         default:
             //  lcd_writeThisCharAt(1, 0, 0x30);
-
             break;
     }
 

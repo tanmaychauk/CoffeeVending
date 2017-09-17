@@ -867,47 +867,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _isFirstTime_Settings `uc 1 e ]
 "63 CommonDeclarations.h
 [v _buttonPressedCount `i 1 e ]
-[p mainexit ]
-"24 MainCode.c
-[v _default_initialisations `(v 0 ef ]
-"25 MainCode.c
-[v _peripheral_initialsation `(v 0 ef ]
-"27 MainCode.c
-[v _isItFirstTime `(v 0 ef ]
-"26 MainCode.c
-[v _default_bootSequence `(v 0 ef ]
-"27 lcd.h
-[v _lcd_clear `(v 0 ef ]
-"21 timer0.h
-[v _start_timer0 `(v 0 ef ]
-"31 lcd.h
-[v _lcd_writeThisStringAt `(v 0 ef3`uc`uc`*uc ]
-"74 CommonDeclarations.h
-[v _IsKeyPressed `(v 0 ef ]
-"24 lcd.h
-[v _lcd_init `(v 0 ef ]
-"12 PORTB_Config.h
-[v _initialisePortB `(v 0 ef ]
-"13 PORTB_Config.h
-[v _enableInterrupt_RB0 `(v 0 ef ]
-"66 CommonDeclarations.h
-[v _GlobalInterrupt_ENABLE `(v 0 ef ]
-"20 timer0.h
-[v _initialise_timer0 `(v 0 ef ]
-"16 ADC.h
-[v _adc_initialise `(v 0 ef ]
-"626 C:\Program Files (x86)\HI-TECH Software\PICC\9.71a\include\pic.h
-[v __delay `(v 0 ef1`ul ]
-[p i __delay ]
-[; ;myTypeDef.h: 19: typedef unsigned char Boolean;
-[; ;myTypeDef.h: 20: typedef char Byte;
-[; ;myTypeDef.h: 21: typedef unsigned char UByte;
-[; ;myTypeDef.h: 22: typedef short SWord;
-[; ;myTypeDef.h: 23: typedef unsigned short UWord;
-[; ;myTypeDef.h: 24: typedef long DWord;
-[; ;myTypeDef.h: 25: typedef unsigned long UDWord;
-[; ;myTypeDef.h: 26: typedef float FWord;
-[; ;myTypeDef.h: 27: typedef double FDWord;
 [; ;pic16f887.h: 19: volatile unsigned char INDF @ 0x000;
 [; ;pic16f887.h: 20: volatile unsigned char TMR0 @ 0x001;
 [; ;pic16f887.h: 21: volatile unsigned char PCL @ 0x002;
@@ -1329,8 +1288,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eeprom_routines.h: 41: extern void eeprom_write(unsigned char addr, unsigned char value);
 [; ;eeprom_routines.h: 42: extern unsigned char eeprom_read(unsigned char addr);
 [; ;pic.h: 626: extern void _delay(unsigned long);
-[; ;eeprom_routines.h: 41: extern void eeprom_write(unsigned char addr, unsigned char value);
-[; ;eeprom_routines.h: 42: extern unsigned char eeprom_read(unsigned char addr);
+[; ;myTypeDef.h: 19: typedef unsigned char Boolean;
+[; ;myTypeDef.h: 20: typedef char Byte;
+[; ;myTypeDef.h: 21: typedef unsigned char UByte;
+[; ;myTypeDef.h: 22: typedef short SWord;
+[; ;myTypeDef.h: 23: typedef unsigned short UWord;
+[; ;myTypeDef.h: 24: typedef long DWord;
+[; ;myTypeDef.h: 25: typedef unsigned long UDWord;
+[; ;myTypeDef.h: 26: typedef float FWord;
+[; ;myTypeDef.h: 27: typedef double FDWord;
 [; ;string.h: 4: typedef int ptrdiff_t;
 [; ;string.h: 5: typedef unsigned size_t;
 [; ;string.h: 6: typedef unsigned short wchar_t;
@@ -1374,46 +1340,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;EEPROM_ReadWrite.h: 29: void myEEPROM_writeData(UByte ADDRESS,UByte DATA);
 [; ;EEPROM_ReadWrite.h: 30: UByte myEEPROM_readData(UByte ADDRESS);
 [; ;EEPROM_ReadWrite.h: 31: void myEEPROM_writeString(UByte StartAddress,UByte *data);
-[; ;ADC.h: 16: void adc_initialise();
-[; ;ADC.h: 17: int adc_getValue();
-[; ;ADC.h: 18: void print_ADCValue(int adcValue);
-[; ;ADC.h: 19: void readADCvalue();
-[; ;string.h: 22: extern void * memcpy(void *, const void *, size_t);
-[; ;string.h: 23: extern void * memmove(void *, const void *, size_t);
-[; ;string.h: 24: extern void * memset(void *, int, size_t);
-[; ;string.h: 35: extern char * strcat(char *, const char *);
-[; ;string.h: 36: extern char * strcpy(char *, const char *);
-[; ;string.h: 37: extern char * strncat(char *, const char *, size_t);
-[; ;string.h: 38: extern char * strncpy(char *, const char *, size_t);
-[; ;string.h: 39: extern char * strdup(const char *);
-[; ;string.h: 40: extern char * strtok(char *, const char *);
-[; ;string.h: 43: extern int memcmp(const void *, const void *, size_t);
-[; ;string.h: 44: extern int strcmp(const char *, const char *);
-[; ;string.h: 45: extern int stricmp(const char *, const char *);
-[; ;string.h: 46: extern int strncmp(const char *, const char *, size_t);
-[; ;string.h: 47: extern int strnicmp(const char *, const char *, size_t);
-[; ;string.h: 48: extern void * memchr(const void *, int, size_t);
-[; ;string.h: 49: extern size_t strcspn(const char *, const char *);
-[; ;string.h: 50: extern char * strpbrk(const char *, const char *);
-[; ;string.h: 51: extern size_t strspn(const char *, const char *);
-[; ;string.h: 52: extern char * strstr(const char *, const char *);
-[; ;string.h: 53: extern char * stristr(const char *, const char *);
-[; ;string.h: 54: extern char * strerror(int);
-[; ;string.h: 55: extern size_t strlen(const char *);
-[; ;string.h: 56: extern char * strchr(const char *, int);
-[; ;string.h: 57: extern char * strichr(const char *, int);
-[; ;string.h: 58: extern char * strrchr(const char *, int);
-[; ;string.h: 59: extern char * strrichr(const char *, int);
-[; ;lcd.h: 24: void lcd_init();
-[; ;lcd.h: 25: void lcd_write(UByte data);
-[; ;lcd.h: 26: void lcd_cmd(UByte cmnd);
-[; ;lcd.h: 27: void lcd_clear();
-[; ;lcd.h: 28: void clear_XY(UByte row,UByte column);
-[; ;lcd.h: 29: void lcd_puts(UByte *ptr);
-[; ;lcd.h: 30: void goto_XY(UByte row,UByte column);
-[; ;lcd.h: 31: void lcd_writeThisStringAt(UByte row,UByte column,UByte *ptr);
-[; ;lcd.h: 32: void lcd_writeThisCharAt(UByte row,UByte column,UByte data);
-[; ;lcd.h: 33: void lcd_writeThisDigit(UByte data);
 "26 SettingModeHandler.h
 [i _isFirstTimeInSetting
 -> -> 1 `i `uc
@@ -1488,505 +1414,57 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;CommonDeclarations.h: 72: void NormalModeOperations(UByte keyPressed);
 [; ;CommonDeclarations.h: 73: void SettingModeOperations(UByte KeyPressed);
 [; ;CommonDeclarations.h: 74: void IsKeyPressed();
-[; ;timer0.h: 20: void initialise_timer0();
-[; ;timer0.h: 21: void start_timer0();
-[; ;timer0.h: 22: void stop_timer0();
 [; ;timer2.h: 25: void initialise_timer2();
 [; ;timer2.h: 26: void start_timer2();
 [; ;timer2.h: 27: void stop_timer2();
-[; ;PORTB_Config.h: 12: void initialisePortB();
-[; ;PORTB_Config.h: 13: void enableInterrupt_RB0();
-[; ;PORTB_Config.h: 14: void disableInterrupt_RB0();
-"20 MainCode.c
-[; ;MainCode.c: 20: asm("\tpsect config,class=CONFIG,delta=2"); asm("\tdw ""0x3CFF & 0x3FF7 & 0x2FFF & 0x3FFA & 0x3FEF & 0x3FFF");
-[; 	psect config,class=CONFIG,delta=2 ;#
-[; 	dw 0x3CFF & 0x3FF7 & 0x2FFF & 0x3FFA & 0x3FEF & 0x3FFF ;#
-[; ;MainCode.c: 24: void default_initialisations();
-[; ;MainCode.c: 25: void peripheral_initialsation();
-[; ;MainCode.c: 26: void default_bootSequence();
-[; ;MainCode.c: 27: void isItFirstTime();
-"44
-[v _main `(v 1 ef ]
+"6 timer2.c
+[v _initialise_timer2 `(v 1 ef ]
 {
-[; ;MainCode.c: 44: void main(void) {
-[e :U _main ]
+[; ;timer2.c: 5: void initialise_timer2()
+[; ;timer2.c: 6: {
+[e :U _initialise_timer2 ]
 [f ]
-"45
-[v _temperatureCelcius `i 1 a ]
-[; ;MainCode.c: 45: int temperatureCelcius;
-[; ;MainCode.c: 46: default_initialisations();
-"46
-[e ( _default_initialisations ..  ]
-[; ;MainCode.c: 47: peripheral_initialsation();
-"47
-[e ( _peripheral_initialsation ..  ]
-[; ;MainCode.c: 48: isItFirstTime();
-"48
-[e ( _isItFirstTime ..  ]
-[; ;MainCode.c: 50: default_bootSequence();
-"50
-[e ( _default_bootSequence ..  ]
-[; ;MainCode.c: 52: lcd_clear();
-"52
-[e ( _lcd_clear ..  ]
-[; ;MainCode.c: 53: PORTB = 0x01;
-"53
-[e = _PORTB -> -> 1 `i `uc ]
-[; ;MainCode.c: 55: start_timer0();
-"55
-[e ( _start_timer0 ..  ]
-[; ;MainCode.c: 57: while (1) {
-"57
-[e :U 3 ]
-{
-[; ;MainCode.c: 59: if (1 == modeOfWorking)
-"59
-[e $ ! == -> 1 `i -> _modeOfWorking `i 5  ]
-[; ;MainCode.c: 60: {
-"60
-{
-[; ;MainCode.c: 61: lcd_writeThisStringAt(0, 4, "WELCOME");
-"61
-[e ( _lcd_writeThisStringAt (3 , , -> -> 0 `i `uc -> -> 4 `i `uc -> :s 1C `*uc ]
-"62
-}
-[e :U 5 ]
-[; ;MainCode.c: 62: }
-[; ;MainCode.c: 63: IsKeyPressed();
-"63
-[e ( _IsKeyPressed ..  ]
-"65
-}
-[e :U 2 ]
-"57
-[e $U 3  ]
-[e :U 4 ]
-[; ;MainCode.c: 65: }
-[; ;MainCode.c: 66: }
-"66
+[; ;timer2.c: 8: T2CON = 0b1111011;
+"8
+[e = _T2CON -> -> 123 `i `uc ]
+[; ;timer2.c: 9: TMR2IE = 1;
+"9
+[e = _TMR2IE -> -> 1 `i `b ]
+[; ;timer2.c: 10: TMR2 = 0x00;
+"10
+[e = _TMR2 -> -> 0 `i `uc ]
+[; ;timer2.c: 11: PR2 = 0xFF;
+"11
+[e = _PR2 -> -> 255 `i `uc ]
+[; ;timer2.c: 12: }
+"12
 [e :UE 1 ]
 }
-"68
-[v _peripheral_initialsation `(v 1 ef ]
+"14
+[v _start_timer2 `(v 1 ef ]
 {
-[; ;MainCode.c: 68: void peripheral_initialsation() {
-[e :U _peripheral_initialsation ]
+[; ;timer2.c: 13: void start_timer2()
+[; ;timer2.c: 14: {
+[e :U _start_timer2 ]
 [f ]
-[; ;MainCode.c: 69: lcd_init();
-"69
-[e ( _lcd_init ..  ]
-[; ;MainCode.c: 70: initialisePortB();
-"70
-[e ( _initialisePortB ..  ]
-[; ;MainCode.c: 71: enableInterrupt_RB0();
-"71
-[e ( _enableInterrupt_RB0 ..  ]
-[; ;MainCode.c: 73: GlobalInterrupt_ENABLE();
-"73
-[e ( _GlobalInterrupt_ENABLE ..  ]
-[; ;MainCode.c: 74: initialise_timer0();
-"74
-[e ( _initialise_timer0 ..  ]
-[; ;MainCode.c: 76: adc_initialise();
-"76
-[e ( _adc_initialise ..  ]
-[; ;MainCode.c: 77: lcd_clear();
-"77
-[e ( _lcd_clear ..  ]
-[; ;MainCode.c: 78: isFirstTime_Settings = 0;
-"78
-[e = _isFirstTime_Settings -> -> 0 `i `uc ]
-[; ;MainCode.c: 79: }
-"79
-[e :UE 6 ]
+[; ;timer2.c: 15: TMR2ON = 1;
+"15
+[e = _TMR2ON -> -> 1 `i `b ]
+[; ;timer2.c: 16: }
+"16
+[e :UE 2 ]
 }
-"81
-[v _default_initialisations `(v 1 ef ]
+"18
+[v _stop_timer2 `(v 1 ef ]
 {
-[; ;MainCode.c: 81: void default_initialisations() {
-[e :U _default_initialisations ]
+[; ;timer2.c: 17: void stop_timer2()
+[; ;timer2.c: 18: {
+[e :U _stop_timer2 ]
 [f ]
-[; ;MainCode.c: 83: ANSEL = 0x01;
-"83
-[e = _ANSEL -> -> 1 `i `uc ]
-[; ;MainCode.c: 84: ANSELH = 0x00;
-"84
-[e = _ANSELH -> -> 0 `i `uc ]
-[; ;MainCode.c: 86: ADCON1 = 0x80;
-"86
-[e = _ADCON1 -> -> 128 `i `uc ]
-[; ;MainCode.c: 88: TRISE = 0x00;
-"88
-[e = _TRISE -> -> 0 `i `uc ]
-[; ;MainCode.c: 89: TRISD = 0x00;
-"89
-[e = _TRISD -> -> 0 `i `uc ]
-[; ;MainCode.c: 90: TRISC = 0x00;
-"90
-[e = _TRISC -> -> 0 `i `uc ]
-[; ;MainCode.c: 91: TRISB = 0xF1;
-"91
-[e = _TRISB -> -> 241 `i `uc ]
-[; ;MainCode.c: 92: TRISA = 0x01;
-"92
-[e = _TRISA -> -> 1 `i `uc ]
-[; ;MainCode.c: 94: modeOfWorking = 1;
-"94
-[e = _modeOfWorking -> -> 1 `i `uc ]
-[; ;MainCode.c: 95: }
-"95
-[e :UE 7 ]
+[; ;timer2.c: 19: TMR2ON = 0;
+"19
+[e = _TMR2ON -> -> 0 `i `b ]
+[; ;timer2.c: 20: }
+"20
+[e :UE 3 ]
 }
-"97
-[v _default_bootSequence `(v 1 ef ]
-{
-[; ;MainCode.c: 97: void default_bootSequence() {
-[e :U _default_bootSequence ]
-[f ]
-[; ;MainCode.c: 98: lcd_writeThisStringAt(0, 0, "Starting....");
-"98
-[e ( _lcd_writeThisStringAt (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> :s 2C `*uc ]
-[; ;MainCode.c: 99: _delay((unsigned long)((1000)*(20000000/4000.0)));
-"99
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-[; ;MainCode.c: 100: }
-"100
-[e :UE 8 ]
-}
-"102
-[v _isItFirstTime `(v 1 ef ]
-{
-[; ;MainCode.c: 102: void isItFirstTime() {
-[e :U _isItFirstTime ]
-[f ]
-"103
-[v _Config `uc 1 a ]
-[; ;MainCode.c: 103: UByte Config;
-[; ;MainCode.c: 105: Config = ((EEADR=(0x05)),(EECON1&=0x3F),(RD=1),EEDATA);
-"105
-[e = _Config ; ; ; = _EEADR -> -> 5 `i `uc =& _EECON1 -> -> 63 `i `uc -> = _RD -> -> 1 `i `b `i _EEDATA ]
-[; ;MainCode.c: 106: if (0x01 != Config) {
-"106
-[e $ ! != -> 1 `i -> _Config `i 10  ]
-{
-[; ;MainCode.c: 109: do{ while(WR)continue;EEADR=(0x10);EEDATA=(0x10); EECON1&=0x3F;CARRY=0;if(GIE)CARRY=1;GIE=0; WREN=1;EECON2=0x55;EECON2=0xAA;WR=1;WREN=0; if(CARRY)GIE=1; }while(0);
-"109
-[e :U 13 ]
-{
-[e $U 14  ]
-[e :U 15 ]
-[e $U 14  ]
-[e :U 14 ]
-[e $ _WR 15  ]
-[e :U 16 ]
-[e = _EEADR -> -> 16 `i `uc ]
-[e = _EEDATA -> -> 16 `i `uc ]
-[e =& _EECON1 -> -> 63 `i `uc ]
-[e = _CARRY -> -> 0 `i `b ]
-[e $ ! _GIE 17  ]
-[e = _CARRY -> -> 1 `i `b ]
-[e :U 17 ]
-[e = _GIE -> -> 0 `i `b ]
-[e = _WREN -> -> 1 `i `b ]
-[e = _EECON2 -> -> 85 `i `uc ]
-[e = _EECON2 -> -> 170 `i `uc ]
-[e = _WR -> -> 1 `i `b ]
-[e = _WREN -> -> 0 `i `b ]
-[e $ ! _CARRY 18  ]
-[e = _GIE -> -> 1 `i `b ]
-[e :U 18 ]
-}
-[e :U 12 ]
-[; ;MainCode.c: 110: _delay((unsigned long)((100)*(20000000/4000.0)));
-"110
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-[; ;MainCode.c: 111: do{ while(WR)continue;EEADR=(0x12);EEDATA=(0x10); EECON1&=0x3F;CARRY=0;if(GIE)CARRY=1;GIE=0; WREN=1;EECON2=0x55;EECON2=0xAA;WR=1;WREN=0; if(CARRY)GIE=1; }while(0);
-"111
-[e :U 21 ]
-{
-[e $U 22  ]
-[e :U 23 ]
-[e $U 22  ]
-[e :U 22 ]
-[e $ _WR 23  ]
-[e :U 24 ]
-[e = _EEADR -> -> 18 `i `uc ]
-[e = _EEDATA -> -> 16 `i `uc ]
-[e =& _EECON1 -> -> 63 `i `uc ]
-[e = _CARRY -> -> 0 `i `b ]
-[e $ ! _GIE 25  ]
-[e = _CARRY -> -> 1 `i `b ]
-[e :U 25 ]
-[e = _GIE -> -> 0 `i `b ]
-[e = _WREN -> -> 1 `i `b ]
-[e = _EECON2 -> -> 85 `i `uc ]
-[e = _EECON2 -> -> 170 `i `uc ]
-[e = _WR -> -> 1 `i `b ]
-[e = _WREN -> -> 0 `i `b ]
-[e $ ! _CARRY 26  ]
-[e = _GIE -> -> 1 `i `b ]
-[e :U 26 ]
-}
-[e :U 20 ]
-[; ;MainCode.c: 112: _delay((unsigned long)((100)*(20000000/4000.0)));
-"112
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-[; ;MainCode.c: 113: do{ while(WR)continue;EEADR=(0x14);EEDATA=(0x10); EECON1&=0x3F;CARRY=0;if(GIE)CARRY=1;GIE=0; WREN=1;EECON2=0x55;EECON2=0xAA;WR=1;WREN=0; if(CARRY)GIE=1; }while(0);
-"113
-[e :U 29 ]
-{
-[e $U 30  ]
-[e :U 31 ]
-[e $U 30  ]
-[e :U 30 ]
-[e $ _WR 31  ]
-[e :U 32 ]
-[e = _EEADR -> -> 20 `i `uc ]
-[e = _EEDATA -> -> 16 `i `uc ]
-[e =& _EECON1 -> -> 63 `i `uc ]
-[e = _CARRY -> -> 0 `i `b ]
-[e $ ! _GIE 33  ]
-[e = _CARRY -> -> 1 `i `b ]
-[e :U 33 ]
-[e = _GIE -> -> 0 `i `b ]
-[e = _WREN -> -> 1 `i `b ]
-[e = _EECON2 -> -> 85 `i `uc ]
-[e = _EECON2 -> -> 170 `i `uc ]
-[e = _WR -> -> 1 `i `b ]
-[e = _WREN -> -> 0 `i `b ]
-[e $ ! _CARRY 34  ]
-[e = _GIE -> -> 1 `i `b ]
-[e :U 34 ]
-}
-[e :U 28 ]
-[; ;MainCode.c: 114: _delay((unsigned long)((100)*(20000000/4000.0)));
-"114
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-[; ;MainCode.c: 115: do{ while(WR)continue;EEADR=(0x16);EEDATA=(0x10); EECON1&=0x3F;CARRY=0;if(GIE)CARRY=1;GIE=0; WREN=1;EECON2=0x55;EECON2=0xAA;WR=1;WREN=0; if(CARRY)GIE=1; }while(0);
-"115
-[e :U 37 ]
-{
-[e $U 38  ]
-[e :U 39 ]
-[e $U 38  ]
-[e :U 38 ]
-[e $ _WR 39  ]
-[e :U 40 ]
-[e = _EEADR -> -> 22 `i `uc ]
-[e = _EEDATA -> -> 16 `i `uc ]
-[e =& _EECON1 -> -> 63 `i `uc ]
-[e = _CARRY -> -> 0 `i `b ]
-[e $ ! _GIE 41  ]
-[e = _CARRY -> -> 1 `i `b ]
-[e :U 41 ]
-[e = _GIE -> -> 0 `i `b ]
-[e = _WREN -> -> 1 `i `b ]
-[e = _EECON2 -> -> 85 `i `uc ]
-[e = _EECON2 -> -> 170 `i `uc ]
-[e = _WR -> -> 1 `i `b ]
-[e = _WREN -> -> 0 `i `b ]
-[e $ ! _CARRY 42  ]
-[e = _GIE -> -> 1 `i `b ]
-[e :U 42 ]
-}
-[e :U 36 ]
-[; ;MainCode.c: 116: _delay((unsigned long)((100)*(20000000/4000.0)));
-"116
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-[; ;MainCode.c: 117: do{ while(WR)continue;EEADR=(0x20);EEDATA=(0x10); EECON1&=0x3F;CARRY=0;if(GIE)CARRY=1;GIE=0; WREN=1;EECON2=0x55;EECON2=0xAA;WR=1;WREN=0; if(CARRY)GIE=1; }while(0);
-"117
-[e :U 45 ]
-{
-[e $U 46  ]
-[e :U 47 ]
-[e $U 46  ]
-[e :U 46 ]
-[e $ _WR 47  ]
-[e :U 48 ]
-[e = _EEADR -> -> 32 `i `uc ]
-[e = _EEDATA -> -> 16 `i `uc ]
-[e =& _EECON1 -> -> 63 `i `uc ]
-[e = _CARRY -> -> 0 `i `b ]
-[e $ ! _GIE 49  ]
-[e = _CARRY -> -> 1 `i `b ]
-[e :U 49 ]
-[e = _GIE -> -> 0 `i `b ]
-[e = _WREN -> -> 1 `i `b ]
-[e = _EECON2 -> -> 85 `i `uc ]
-[e = _EECON2 -> -> 170 `i `uc ]
-[e = _WR -> -> 1 `i `b ]
-[e = _WREN -> -> 0 `i `b ]
-[e $ ! _CARRY 50  ]
-[e = _GIE -> -> 1 `i `b ]
-[e :U 50 ]
-}
-[e :U 44 ]
-[; ;MainCode.c: 118: _delay((unsigned long)((100)*(20000000/4000.0)));
-"118
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-[; ;MainCode.c: 119: do{ while(WR)continue;EEADR=(0x22);EEDATA=(0x10); EECON1&=0x3F;CARRY=0;if(GIE)CARRY=1;GIE=0; WREN=1;EECON2=0x55;EECON2=0xAA;WR=1;WREN=0; if(CARRY)GIE=1; }while(0);
-"119
-[e :U 53 ]
-{
-[e $U 54  ]
-[e :U 55 ]
-[e $U 54  ]
-[e :U 54 ]
-[e $ _WR 55  ]
-[e :U 56 ]
-[e = _EEADR -> -> 34 `i `uc ]
-[e = _EEDATA -> -> 16 `i `uc ]
-[e =& _EECON1 -> -> 63 `i `uc ]
-[e = _CARRY -> -> 0 `i `b ]
-[e $ ! _GIE 57  ]
-[e = _CARRY -> -> 1 `i `b ]
-[e :U 57 ]
-[e = _GIE -> -> 0 `i `b ]
-[e = _WREN -> -> 1 `i `b ]
-[e = _EECON2 -> -> 85 `i `uc ]
-[e = _EECON2 -> -> 170 `i `uc ]
-[e = _WR -> -> 1 `i `b ]
-[e = _WREN -> -> 0 `i `b ]
-[e $ ! _CARRY 58  ]
-[e = _GIE -> -> 1 `i `b ]
-[e :U 58 ]
-}
-[e :U 52 ]
-[; ;MainCode.c: 120: _delay((unsigned long)((100)*(20000000/4000.0)));
-"120
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-[; ;MainCode.c: 121: do{ while(WR)continue;EEADR=(0x24);EEDATA=(0x10); EECON1&=0x3F;CARRY=0;if(GIE)CARRY=1;GIE=0; WREN=1;EECON2=0x55;EECON2=0xAA;WR=1;WREN=0; if(CARRY)GIE=1; }while(0);
-"121
-[e :U 61 ]
-{
-[e $U 62  ]
-[e :U 63 ]
-[e $U 62  ]
-[e :U 62 ]
-[e $ _WR 63  ]
-[e :U 64 ]
-[e = _EEADR -> -> 36 `i `uc ]
-[e = _EEDATA -> -> 16 `i `uc ]
-[e =& _EECON1 -> -> 63 `i `uc ]
-[e = _CARRY -> -> 0 `i `b ]
-[e $ ! _GIE 65  ]
-[e = _CARRY -> -> 1 `i `b ]
-[e :U 65 ]
-[e = _GIE -> -> 0 `i `b ]
-[e = _WREN -> -> 1 `i `b ]
-[e = _EECON2 -> -> 85 `i `uc ]
-[e = _EECON2 -> -> 170 `i `uc ]
-[e = _WR -> -> 1 `i `b ]
-[e = _WREN -> -> 0 `i `b ]
-[e $ ! _CARRY 66  ]
-[e = _GIE -> -> 1 `i `b ]
-[e :U 66 ]
-}
-[e :U 60 ]
-[; ;MainCode.c: 122: _delay((unsigned long)((100)*(20000000/4000.0)));
-"122
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-[; ;MainCode.c: 123: do{ while(WR)continue;EEADR=(0x26);EEDATA=(0x10); EECON1&=0x3F;CARRY=0;if(GIE)CARRY=1;GIE=0; WREN=1;EECON2=0x55;EECON2=0xAA;WR=1;WREN=0; if(CARRY)GIE=1; }while(0);
-"123
-[e :U 69 ]
-{
-[e $U 70  ]
-[e :U 71 ]
-[e $U 70  ]
-[e :U 70 ]
-[e $ _WR 71  ]
-[e :U 72 ]
-[e = _EEADR -> -> 38 `i `uc ]
-[e = _EEDATA -> -> 16 `i `uc ]
-[e =& _EECON1 -> -> 63 `i `uc ]
-[e = _CARRY -> -> 0 `i `b ]
-[e $ ! _GIE 73  ]
-[e = _CARRY -> -> 1 `i `b ]
-[e :U 73 ]
-[e = _GIE -> -> 0 `i `b ]
-[e = _WREN -> -> 1 `i `b ]
-[e = _EECON2 -> -> 85 `i `uc ]
-[e = _EECON2 -> -> 170 `i `uc ]
-[e = _WR -> -> 1 `i `b ]
-[e = _WREN -> -> 0 `i `b ]
-[e $ ! _CARRY 74  ]
-[e = _GIE -> -> 1 `i `b ]
-[e :U 74 ]
-}
-[e :U 68 ]
-[; ;MainCode.c: 124: _delay((unsigned long)((100)*(20000000/4000.0)));
-"124
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-[; ;MainCode.c: 127: CurrentCoffeeQuantity = 0x10;
-"127
-[e = _CurrentCoffeeQuantity -> -> 16 `i `uc ]
-[; ;MainCode.c: 128: CurrentWaterQuantity_forCoffee = 0x10;
-"128
-[e = _CurrentWaterQuantity_forCoffee -> -> 16 `i `uc ]
-[; ;MainCode.c: 129: CurrentTeaQuantity = 0x10;
-"129
-[e = _CurrentTeaQuantity -> -> 16 `i `uc ]
-[; ;MainCode.c: 130: CurrentWaterQuantity_forTea = 0x10;
-"130
-[e = _CurrentWaterQuantity_forTea -> -> 16 `i `uc ]
-[; ;MainCode.c: 132: do{ while(WR)continue;EEADR=(0x05);EEDATA=(0x01); EECON1&=0x3F;CARRY=0;if(GIE)CARRY=1;GIE=0; WREN=1;EECON2=0x55;EECON2=0xAA;WR=1;WREN=0; if(CARRY)GIE=1; }while(0);
-"132
-[e :U 77 ]
-{
-[e $U 78  ]
-[e :U 79 ]
-[e $U 78  ]
-[e :U 78 ]
-[e $ _WR 79  ]
-[e :U 80 ]
-[e = _EEADR -> -> 5 `i `uc ]
-[e = _EEDATA -> -> 1 `i `uc ]
-[e =& _EECON1 -> -> 63 `i `uc ]
-[e = _CARRY -> -> 0 `i `b ]
-[e $ ! _GIE 81  ]
-[e = _CARRY -> -> 1 `i `b ]
-[e :U 81 ]
-[e = _GIE -> -> 0 `i `b ]
-[e = _WREN -> -> 1 `i `b ]
-[e = _EECON2 -> -> 85 `i `uc ]
-[e = _EECON2 -> -> 170 `i `uc ]
-[e = _WR -> -> 1 `i `b ]
-[e = _WREN -> -> 0 `i `b ]
-[e $ ! _CARRY 82  ]
-[e = _GIE -> -> 1 `i `b ]
-[e :U 82 ]
-}
-[e :U 76 ]
-[; ;MainCode.c: 135: _delay((unsigned long)((100)*(20000000/4000.0)));
-"135
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-"136
-}
-[; ;MainCode.c: 136: } else if (0x01 == Config) {
-[e $U 83  ]
-[e :U 10 ]
-[e $ ! == -> 1 `i -> _Config `i 84  ]
-{
-[; ;MainCode.c: 139: CurrentCoffeeQuantity = ((EEADR=(0x20)),(EECON1&=0x3F),(RD=1),EEDATA);
-"139
-[e = _CurrentCoffeeQuantity ; ; ; = _EEADR -> -> 32 `i `uc =& _EECON1 -> -> 63 `i `uc -> = _RD -> -> 1 `i `b `i _EEDATA ]
-[; ;MainCode.c: 140: CurrentWaterQuantity_forCoffee = ((EEADR=(0x22)),(EECON1&=0x3F),(RD=1),EEDATA);
-"140
-[e = _CurrentWaterQuantity_forCoffee ; ; ; = _EEADR -> -> 34 `i `uc =& _EECON1 -> -> 63 `i `uc -> = _RD -> -> 1 `i `b `i _EEDATA ]
-[; ;MainCode.c: 141: CurrentTeaQuantity = ((EEADR=(0x24)),(EECON1&=0x3F),(RD=1),EEDATA);
-"141
-[e = _CurrentTeaQuantity ; ; ; = _EEADR -> -> 36 `i `uc =& _EECON1 -> -> 63 `i `uc -> = _RD -> -> 1 `i `b `i _EEDATA ]
-[; ;MainCode.c: 142: CurrentWaterQuantity_forTea = ((EEADR=(0x26)),(EECON1&=0x3F),(RD=1),EEDATA);
-"142
-[e = _CurrentWaterQuantity_forTea ; ; ; = _EEADR -> -> 38 `i `uc =& _EECON1 -> -> 63 `i `uc -> = _RD -> -> 1 `i `b `i _EEDATA ]
-"145
-}
-[e :U 84 ]
-"147
-[e :U 83 ]
-[; ;MainCode.c: 145: }
-[; ;MainCode.c: 147: }
-[e :UE 9 ]
-}
-[a 1C 87 69 76 67 79 77 69 0 ]
-[a 2C 83 116 97 114 116 105 110 103 46 46 46 46 0 ]

@@ -9,8 +9,8 @@
 
 /*******LCD pins definations*******/
 #define	RS RE0
-#define	RW RE1
-#define EN RE2
+//#define	RW 
+#define EN RE1
 
 #define LCDPORT PORTD
 

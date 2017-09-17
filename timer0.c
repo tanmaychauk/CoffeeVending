@@ -17,8 +17,13 @@ void initialise_timer0()
     /*8 bit mode*/
     T0SE = 0;
     
+    /*Clear timer register*/
+    TMR0 = 0x00;
+    
+    INTEDG = 1;
+    
     /*Interrupt related settings*/
-    TMR0IE = 1;         //Enalbe TIMER0 Interrupt
+    T0IE = 1;         //Enalbe TIMER0 Interrupt
     PEIE = 1;           //Enable Peripheral Interrupt
     GlobalInterrupt_ENABLE();  
 }
